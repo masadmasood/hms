@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Check Appointment | DAMS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <link rel="stylesheet" href="./assets/css/res.css" />
+  </head>
+
+  <body>
+    <!-- ---------------- Header ---------------- -->
+    <nav class="navbar navbar-expand-lg sticky-top d-lg-block d-none">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/logo.png" alt="dams-logo" />
+        </a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="./index.html#home">home</a>
+          <a class="nav-link" href="./index.html#about">about</a>
+          <a class="nav-link" href="./index.html#departments">departments</a>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              doctors
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu shadow">
+              <a class="dropdown-item" href="./index.html#doctors">doctors</a>
+              <a class="dropdown-item" href="./index.html#apply">
+                apply as doctor
+              </a>
+              <a class="dropdown-item" href="./doctors.html#all-doctors">
+                view all doctors
+              </a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              appointment
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu shadow">
+              <a
+                class="dropdown-item"
+                href="./appointment.html#book-appointment"
+                >book appointment
+              </a>
+              <a class="dropdown-item" href="#check-appointment">
+                check appointment
+              </a>
+              <a class="dropdown-item" href="#">reschedule appointment</a>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              register
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu shadow">
+              <a class="dropdown-item" href="./login.html#login">login</a>
+              <a class="dropdown-item" href="./signup.html#signup">sign-up</a>
+              <a class="dropdown-item" href="./admin.html#login">admin login</a>
+            </div>
+          </div>
+          <a class="nav-link" href="./index.html#contact">contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbarToo sticky-top d-block d-lg-none">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/logo.png" alt="dams-logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+              <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link divider" href="./index.html#home">home</a>
+              <a class="nav-link divider" href="./index.html#about">about</a>
+              <a class="nav-link divider" href="./index.html#departments">
+                departments
+              </a>
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link divider dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >doctors
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item divider" href="./index.html#doctors"
+                    >doctors
+                  </a>
+                  <a class="dropdown-item divider" href="./index.html#apply">
+                    apply as doctor
+                  </a>
+                  <a
+                    class="dropdown-item divider"
+                    href="./doctors.html#all-doctors"
+                    >view all doctors
+                  </a>
+                </div>
+              </div>
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link divider dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >appointment
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a
+                    class="dropdown-item divider"
+                    href="./appointment.html#book-appointment"
+                    >book appointment
+                  </a>
+                  <a class="dropdown-item divider" href="#check-appointment">
+                    check appointment
+                  </a>
+                  <a class="dropdown-item divider" href="#">
+                    reschedule appointment
+                  </a>
+                </div>
+              </div>
+
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link divider dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >register
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item divider" href="./login.html#login">
+                    login
+                  </a>
+                  <a class="dropdown-item divider" href="./signup.html#signup">
+                    sign-up
+                  </a>
+                  <a class="dropdown-item divider" href="./admin.html#login">
+                    admin login
+                  </a>
+                </div>
+              </div>
+              <a class="nav-link" href="./index.html#contact">contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ---------------- Check Appointment ---------------- -->
+    <section id="check-appointment" class="check-appointment section-padding">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8">
+            <div class="sections-title text-center">
+              <span>Appointment</span>
+              <h2>Check Appointment</h2>
+              <p>
+                I'd be happy to help you with appointment details. However, I
+                need more specific information about the appointment you're
+                referring to. Could you please provide me with details like the
+                name, appointment id, phone number, and any other relevant
+                information? This will help me assist you more effectively.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row my-3">
+          <div class="col-lg-8 mx-auto">
+            <div class="input-group">
+              <div class="icon">
+                <a href="#search"><i class="fas fa-search"></i></a>
+              </div>
+              <input
+                type="search"
+                class="form-control"
+                id="search"
+                placeholder="Type to Search..."
+              />
+              <button class="btn" type="button">check</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- Footer ---------------- -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row gy-5 footer-row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>dams</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+                provident! Doloremque.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>quick links</h3>
+              <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#doctors">doctors</a></li>
+                <li><a href="#feedback">feedback</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>become doctor</h3>
+              <ul>
+                <li><a href="#">affiliates</a></li>
+                <li><a href="#">become a doctor</a></li>
+                <li><a href="#">training webinars</a></li>
+                <li><a href="#">free personality test</a></li>
+                <li><a href="#">help & support</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>get in touch</h3>
+              <ul>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://www.twitter.com/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                <li><a href="https://www.linkdien.com/">Linkdien</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="copyright-text mb-0">&copy; made by miracle group</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/swiper.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

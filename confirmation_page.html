@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Doctor Appointment Mangement System</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <link rel="stylesheet" href="./assets/css/res.css" />
+    <style>
+      /* Confirmation */
+
+      #conf {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .thank-you {
+        text-transform: capitalize;
+        text-align: center;
+        margin-top: 30px;
+        color: #555;
+      }
+
+      .table th {
+        background-color: #f7f7f7;
+        font-weight: 450;
+      }
+
+      .table th,
+      .table td {
+        padding: 20px 20px 5px 20px !important;
+      }
+
+      .swal-modal {
+        text-align: center !important;
+      }
+
+      .swal-title {
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        text-transform: capitalize !important;
+        color: #444;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .swal-text {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 1.8;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .swal-button {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        box-shadow: none !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        padding: 10px 40px !important;
+        transition: var(--transition) !important;
+      }
+
+      .swal-button:hover {
+        background-color: #0b56c7 !important;
+      }
+    </style>
+  </head>
+
+  <body id="conf">
+    <!-- ---------------- Confirmation ---------------- -->
+    <div class="container section-padding">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7">
+          <div class="sections-title text-center">
+            <span class="bg-light">Appointment</span>
+            <h2>Booking Confirmation</h2>
+            <p>
+              We can't wait to provide you with an exceptional experience! If
+              you have any questions or need to make changes to your booking,
+              don't hesitate to contact us
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-12 shadow bg-white p-5 rounded-3">
+          <table class="table">
+            <tr>
+              <th>Name</th>
+              <td id="confirmation_full_name"></td>
+            </tr>
+            <tr>
+              <th>Age</th>
+              <td id="confirmation_age"></td>
+            </tr>
+            <tr>
+              <th>Gender</th>
+              <td id="confirmation_gender"></td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td id="confirmation_email"></td>
+            </tr>
+            <tr>
+              <th>Phone</th>
+              <td id="confirmation_phone"></td>
+            </tr>
+            <tr>
+              <th>Department</th>
+              <td id="confirmation_department"></td>
+            </tr>
+            <tr>
+              <th>Specialist</th>
+              <td id="confirmation_specialist"></td>
+            </tr>
+            <tr>
+              <th>Fees</th>
+              <td id="confirmation_fees"></td>
+            </tr>
+            <tr>
+              <th>Time Slot</th>
+              <td id="confirmation_time_slot"></td>
+            </tr>
+            <tr>
+              <th>Additional Information</th>
+              <td id="confirmation_additional_info"></td>
+            </tr>
+          </table>
+          <div class="thank-you">
+            <p>Thank you for choosing our services!</p>
+          </div>
+          <div class="text-center mt-4">
+            <button onclick="cancelAppointment()" class="btn">Re-edit</button>
+            <button onclick="confirmAppointment()" class="btn">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/swiper.min.js"></script>
+    <script src="./assets/js/swal.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script>
+      function getAppointmentData() {
+        const appointmentData = localStorage.getItem("appointmentData");
+        if (appointmentData) {
+          return JSON.parse(appointmentData);
+        }
+        return null;
+      }
+
+      function populateConfirmationTable() {
+        const appointmentData = getAppointmentData();
+        if (appointmentData) {
+          const fullName =
+            appointmentData.firstName + " " + appointmentData.lastName;
+          document.getElementById("confirmation_full_name").textContent =
+            fullName;
+          document.getElementById("confirmation_age").textContent =
+            appointmentData.age;
+          document.getElementById("confirmation_gender").textContent =
+            appointmentData.gender;
+          document.getElementById("confirmation_email").textContent =
+            appointmentData.email;
+          document.getElementById("confirmation_phone").textContent =
+            appointmentData.phone;
+          document.getElementById("confirmation_department").textContent =
+            appointmentData.department;
+          document.getElementById("confirmation_specialist").textContent =
+            appointmentData.specialist;
+          document.getElementById("confirmation_fees").textContent =
+            appointmentData.fees;
+          document.getElementById("confirmation_time_slot").textContent =
+            appointmentData.timeSlot;
+          document.getElementById("confirmation_additional_info").textContent =
+            appointmentData.additionalInfo;
+        }
+      }
+
+      function confirmAppointment() {
+        swal({
+          title: "Appointment Successfully Sent.",
+          text: "Your appointment will be approved as soon as possible.",
+          icon: "success",
+          closeOnClickOutside: false,
+        }).then(function () {
+          localStorage.removeItem("appointmentData");
+          window.location.href = "index.html";
+        });
+      }
+
+      function cancelAppointment() {
+        localStorage.removeItem("appointmentData");
+        window.location.href = "appointment.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", populateConfirmationTable);
+    </script>
+  </body>
+</html>

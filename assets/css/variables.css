@@ -1,0 +1,46 @@
+/* ------------------- Table Of Content's ------------------- 
+*
+* 00: Imports Item's
+* 01: Google Font's
+* 02: Base
+* 03: Global
+* 04: Header
+* 05: Home
+* 06: About
+* 07: Services
+* 08: Doctors
+* 09: Apply Now
+* 10: Footer
+*
+* ------------------- Table Of Ends ------------------- */
+
+:root {
+  --white-color: #ffffff;
+  --primary-color: #247cff;
+  --section-bg-color: #f9f9f9;
+  --dark-color: #000000;
+  --title-color: #565758;
+  --p-color: #717275;
+  --border-color: #eaeaea;
+  --border-shadow: 3.2px solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0rem 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
+
+  --transition: all 0.3s ease;
+
+  --primary-font: "Poppins", "Segoe UI", sans-serif, Geneva, Verdana;
+  --body-font-family: "Open Sans", sans-serif;
+
+  --h1-font-size: 3rem;
+  --h2-font-size: 2.25rem;
+  --h3-font-size: 2rem;
+  --h4-font-size: 1.75rem;
+  --h5-font-size: 1.5rem;
+  --h6-font-size: 1.375rem;
+  --p-font-size: 1.125rem;
+  --menu-font-size: 1rem;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}

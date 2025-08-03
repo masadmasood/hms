@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Doctor Appointment Management System</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <link rel="stylesheet" href="./assets/css/res.css" />
+  </head>
+
+  <body>
+    <!-- ---------------- Header ---------------- -->
+    <nav class="navbar navbar-expand-lg sticky-top d-lg-block d-none">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/logo.png" alt="dams-logo" />
+        </a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="#home">home</a>
+          <a class="nav-link" href="#about">about</a>
+          <a class="nav-link" href="#departments">departments</a>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              doctors
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu shadow">
+              <a class="dropdown-item" href="#doctors">doctors</a>
+              <a class="dropdown-item" href="#apply">apply as doctor</a>
+              <a class="dropdown-item" href="./doctors.html#all-doctors">
+                view all doctors
+              </a>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              appointment
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu shadow">
+              <a
+                class="dropdown-item"
+                href="./appointment.html#book-appointment"
+                >book appointment
+              </a>
+              <a
+                class="dropdown-item"
+                href="./check_appointment.html#check-appointment"
+                >check appointment
+              </a>
+              <a class="dropdown-item" href="#">reschedule appointment </a>
+            </div>
+          </div>
+
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              register
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu shadow">
+              <a class="dropdown-item" href="./login.html#login">login</a>
+              <a class="dropdown-item" href="./signup.html#signup">sign-up</a>
+              <a class="dropdown-item" href="./admin.html#login">admin login</a>
+            </div>
+          </div>
+          <a class="nav-link" href="#contact">contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbarToo sticky-top d-block d-lg-none">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/logo.png" alt="dams-logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+              <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link divider" href="#home">home</a>
+              <a class="nav-link divider" href="#about">about</a>
+              <a class="nav-link divider" href="#departments">departments</a>
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link divider dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >doctors
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item divider" href="#doctors">doctors</a>
+                  <a class="dropdown-item divider" href="#apply">
+                    apply as doctor
+                  </a>
+                  <a
+                    class="dropdown-item divider"
+                    href="./doctors.html#all-doctors"
+                    >view all doctors
+                  </a>
+                </div>
+              </div>
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link divider dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >appointment
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a
+                    class="dropdown-item divider"
+                    href="./appointment.html#book-appointment"
+                    >book appointment
+                  </a>
+                  <a
+                    class="dropdown-item divider"
+                    href="./check_appointment.html#check-appointment"
+                    >check appointment
+                  </a>
+
+                  <a class="dropdown-item divider" href="#"
+                    >reschedule appointment
+                  </a>
+                </div>
+              </div>
+
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link divider dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  >register
+                  <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item divider" href="./login.html#login">
+                    login
+                  </a>
+                  <a class="dropdown-item divider" href="./signup.html#signup">
+                    sign-up
+                  </a>
+                  <a class="dropdown-item divider" href="./admin.html#login">
+                    admin login
+                  </a>
+                </div>
+              </div>
+              <a class="nav-link" href="#contact">contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ---------------- Home ---------------- -->
+      <section id="home" class="home">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="content">
+                <h1>Apki health hamri tarjeeh.</h1>
+                <p>Book Inclinic Appointments From The Comfort Of Your Home.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-7 mx-auto">
+              <div class="input-group">
+                <div class="icon">
+                  <a href="#search"><i class="fas fa-search"></i></a>
+                </div>
+                <input
+                  type="search"
+                  class="form-control"
+                  list="datalistOptions"
+                  id="search"
+                  placeholder="Type to Search..."
+                />
+                <button class="btn" type="button">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- About ---------------- -->
+      <section id="about" class="about section-padding bg-white">
+        <div class="container">
+          <div class="row align-items-center gy-5">
+            <div class="col-md-6">
+              <div class="content">
+                <span>about us</span>
+                <h3>Apki health hamri tarjeeh.</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Officiis rerum excepturi, rem delectus molestiae quae, laborum
+                  perspiciatis quam asperiores saepe repellat voluptatem maxime
+                  fugit qui doloremque ea! Officiis, sapiente hic!
+                </p>
+                <a href="./appointment.html#book-appointment" class="btn">
+                  make appointment
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 order-first order-md-last">
+              <div class="image text-center">
+                <img src="./assets/images/about-img-1.jpg" alt="about" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- Departments ---------------- -->
+      <section id="departments" class="departments section-padding">
+        <div class="container">
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-7">
+              <div class="sections-title text-center">
+                <div class="line">
+                  <span class="bg-light">departments</span>
+                </div>
+                <h2>Explore Our Departments</h2>
+                <p>
+                  Top-notch care in specialized departments. Explore diverse
+                  services to meet your unique healthcare needs
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="nav flex-column nav-pills nav-pills-custom">
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="pill"
+                    data-bs-target="#eye"
+                  >
+                    <i class="fas fa-eye me-3"></i>
+                    <span>eye department</span>
+                  </button>
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#heart"
+                  >
+                    <i class="fas fa-heartbeat me-3"></i>
+                    <span>heart department</span>
+                  </button>
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#ear"
+                  >
+                    <i class="fas fa-ear-deaf me-3"></i>
+                    <span>ear department</span>
+                  </button>
+
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#orthopaedics"
+                  >
+                    <i class="fas fa-bone me-3"></i>
+                    <span>orthopaedics department</span>
+                  </button>
+
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#skin"
+                  >
+                    <i class="fas fa-person me-3"></i>
+                    <span>skin department</span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="eye">
+                    <h4>eye department</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                  </div>
+                  <div class="tab-pane fade" id="heart">
+                    <h4>heart department</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                  </div>
+
+                  <div class="tab-pane fade" id="ear">
+                    <h4>ear department</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                  </div>
+
+                  <div class="tab-pane fade" id="orthopaedics">
+                    <h4>orthopaedics department</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                  </div>
+
+                  <div class="tab-pane fade" id="skin">
+                    <h4>skin department</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- Doctors ---------------- -->
+      <section id="doctors" class="doctors section-padding bg-white">
+        <div class="container">
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-7">
+              <div class="sections-title text-center">
+                <span>doctors</span>
+                <h2>meet our specialist</h2>
+                <p>
+                  At our esteemed medical center, we take pride in assembling a
+                  team of highly skilled and compassionate doctors who are
+                  dedicated to providing the best <br />
+                  possible healthcare to our patients.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row px-3">
+            <div class="swiper doctor-slider pb-5">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="doctor-item">
+                    <div class="image">
+                      <img src="./assets/images/d1.png" alt="team-01" />
+                    </div>
+                    <div class="content">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Architecto minus id magni, repudiandae maiores
+                        necessitatibus molestias.
+                      </p>
+                      <h5>dr. asad mughal</h5>
+                      <span>psychiatrist specialist</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="doctor-item">
+                    <div class="image">
+                      <img src="./assets/images/d2.png" alt="team-01" />
+                    </div>
+                    <div class="content">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Architecto minus id magni, repudiandae maiores
+                        necessitatibus molestias.
+                      </p>
+                      <h5>dr. moaz meher</h5>
+                      <span>eye specialist</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="doctor-item">
+                    <div class="image">
+                      <img src="./assets/images/d3.png" alt="team-01" />
+                    </div>
+                    <div class="content">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Architecto minus id magni, repudiandae maiores
+                        necessitatibus molestias.
+                      </p>
+                      <h5>dr. badar butt</h5>
+                      <span>heart specialist</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="doctor-item">
+                    <div class="image">
+                      <img src="./assets/images/d4.png" alt="team-01" />
+                    </div>
+                    <div class="content">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Architecto minus id magni, repudiandae maiores
+                        necessitatibus molestias.
+                      </p>
+                      <h5>dr. shamama tariff</h5>
+                      <span>skin specialist</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- Apply Now ---------------- -->
+      <section id="apply" class="apply section-padding">
+        <div class="container">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-6 text-center">
+              <img src="./assets/images/apply.png" alt="" />
+            </div>
+            <div class="col-md-6">
+              <div class="sections-title text-center">
+                <span class="bg-light">apply now</span>
+                <h2>become a doctor</h2>
+                <p>
+                  We are actively hiring skilled and compassionate doctors to
+                  join our appointment system. Join our team to provide
+                  exceptional medical care and make a positive impact on
+                  patients' lives.
+                </p>
+                <a
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >apply now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="exampleModal">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal-body p-0">
+                  <div class="container-fluid">
+                    <div class="row gy-4">
+                      <div class="col-lg-4 col-md-12 model-image"></div>
+                      <div class="col-lg-8 col-md-12 mx-auto">
+                        <form
+                          id="doctorForm"
+                          class="p-lg-5 row gy-3 needs-validation"
+                          novalidate
+                        >
+                          <div class="header">
+                            <h4>Join Our Team As Doctor</h4>
+                            <p>
+                              We are actively hiring skilled and compassionate
+                              doctors to join our appointment system
+                            </p>
+                          </div>
+                          <div class="col-lg-6">
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="fname"
+                              id="fname"
+                              placeholder="First name"
+                              required
+                            />
+                            <div class="invalid-feedback">
+                              Please provide a valid first name.
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="lname"
+                              id="lname"
+                              placeholder="Last name"
+                              required
+                            />
+                            <div class="invalid-feedback">
+                              Please provide a valid last name.
+                            </div>
+                          </div>
+
+                          <div class="col-12">
+                            <input
+                              type="email"
+                              class="form-control"
+                              name="email"
+                              id="email"
+                              placeholder="E-mail or phone"
+                              required
+                            />
+                            <div class="invalid-feedback">
+                              Please provide a valid email address or phone
+                              number.
+                            </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="position"
+                              id="position"
+                              placeholder="Position"
+                              required
+                            />
+                            <div class="invalid-feedback">
+                              Please provide a valid position.
+                            </div>
+                          </div>
+
+                          <div class="col-lg-6">
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="department"
+                              id="department"
+                              placeholder="Department"
+                              required
+                            />
+                            <div class="invalid-feedback">
+                              Please provide a valid department.
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <input
+                              class="form-control"
+                              name="resume"
+                              id="resume"
+                              type="file"
+                              placeholder="Resume"
+                              required
+                            />
+                            <div class="invalid-feedback">
+                              Please provide a valid resume file.
+                            </div>
+                          </div>
+
+                          <div class="col-12">
+                            <textarea
+                              class="form-control"
+                              id="message"
+                              placeholder="Provide more details"
+                              required
+                            ></textarea>
+                            <div class="invalid-feedback">
+                              Please provide more details.
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="check"
+                                required
+                              />
+                              <label class="form-check-label" for="check"
+                                >Agree to terms and conditions</label
+                              >
+                              <div class="invalid-feedback">
+                                You must agree to the terms and conditions.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 mb-4">
+                            <button type="submit" class="modal-btn">
+                              Submit
+                            </button>
+                            <button
+                              type="submit"
+                              class="modal-btn modal-btn-2"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- Contact Us ---------------- -->
+      <section id="contact" class="contact section-padding bg-white">
+        <div class="container">
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-7">
+              <div class="sections-title text-center">
+                <span>contact us</span>
+                <h2>For Any Queries & Support</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                  aliquam autem ipsa suscipit a possimus eos tempora deleniti
+                  corporis dolores.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-5 col-11 mx-auto order-lg-first order-last">
+              <div class="contact-item">
+                <div class="icon">
+                  <i class="fa-solid fa-map"></i>
+                </div>
+                <h4>Hospital Location</h4>
+                <a>Gujranwala Pindi Bypass</a>
+              </div>
+              <div class="contact-item">
+                <div class="icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h4>Write to us at</h4>
+                <a>asadmughal@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <div class="icon">
+                  <i class="fas fa-location-arrow"></i>
+                </div>
+                <h4>Call us on</h4>
+                <a>+92-330-4623227</a>
+              </div>
+            </div>
+
+            <div class="col-lg-7 col-11 mx-auto">
+              <form
+                id="contactForm"
+                class="form row gy-3 needs-validation"
+                novalidate
+              >
+                <div class="header text-center">
+                  <h4>Leave a message</h4>
+                </div>
+                <div class="col-md-6 col-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="fname"
+                    id="fname"
+                    placeholder="First Name"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid first name.
+                  </div>
+                </div>
+                <div class="col-md-6 col-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="lname"
+                    id="lname"
+                    placeholder="Last Name"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid last name.
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="email_phone"
+                    id="email_phone"
+                    placeholder="Email or Phone"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid email or phone number.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="position"
+                    id="position"
+                    placeholder="Subject"
+                    required
+                  />
+                  <div class="invalid-feedback">Please provide a subject.</div>
+                </div>
+
+                <div class="col-12 mb-2">
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    placeholder="Type here"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">Please provide a message.</div>
+                </div>
+
+                <div class="col-12 d-grid mb-3">
+                  <button type="submit" class="modal-btn">Submit</button>
+                </div>
+              </form>
+              <script>
+                (() => {
+                  "use strict";
+
+                  const contactForm = document.getElementById("contactForm");
+
+                  contactForm.addEventListener("submit", (event) => {
+                    if (!contactForm.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+
+                    contactForm.classList.add("was-validated");
+                  });
+                })();
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ---------------- Footer ---------------- -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row gy-5 footer-row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>DAMS</h3>
+              <p>
+                advanced doctor appointment system! Seamlessly schedule
+                appointments with top healthcare professionals for personalized
+                care and timely consultations.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>quick links</h3>
+              <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#doctors">doctors</a></li>
+                <li><a href="#feedback">feedback</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>become doctor</h3>
+              <ul>
+                <li><a href="#">affiliates</a></li>
+                <li><a href="#">become a doctor</a></li>
+                <li><a href="#">training webinars</a></li>
+                <li><a href="#">free personality test</a></li>
+                <li><a href="#">help & support</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item">
+              <h3>get in touch</h3>
+              <ul>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://www.twitter.com/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                <li><a href="https://www.linkdien.com/">Linkdien</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="copyright-text mb-0">&copy; made by miracle group</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/swiper.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

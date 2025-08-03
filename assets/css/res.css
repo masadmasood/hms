@@ -1,0 +1,59 @@
+@media (min-width: 62rem) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 61.9988rem) {
+  html {
+    font-size: 0.9688rem;
+  }
+}
+
+@media (min-width: 36rem) and (max-width: 47.9988rem) {
+  html {
+    font-size: 0.9375rem;
+  }
+
+  .navbar {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 35.9988rem) {
+  html {
+    font-size: 0.875rem;
+  }
+
+  .navbar {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .navbar .navbar-brand img {
+    height: 4.5rem;
+  }
+}
+
+@media (max-width: 23.75rem) {
+  .input-group button {
+    display: none;
+  }
+}
+
+/* Tabs */
+@media (min-width: 62rem) {
+  .nav-pills-custom .nav-link::before {
+    content: "";
+    display: block;
+    border-top: .5rem solid transparent;
+    border-left: .625rem solid var(--white-color);
+    border-bottom: .5rem solid transparent;
+    position: absolute;
+    top: 50%;
+    right: -0.625rem;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}

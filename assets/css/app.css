@@ -1,0 +1,676 @@
+/* ---------------- Variables ---------------- */
+@import url("./variables.css");
+
+/* ---------------- Fonts ---------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* ---------------- Global ---------------- */
+@import url("./global.css");
+
+/* ---------------- Header ---------------- */
+.navbar {
+  background-color: #f8f9fa;
+  border-bottom: 0.0625rem solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.navbar.scrolled {
+  box-shadow: var(--box-shadow);
+}
+
+.navbarToo.scrolled {
+  box-shadow: var(--box-shadow);
+}
+
+.navbar .navbar-brand img {
+  height: 5rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--p-color);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--menu-font-size);
+  text-transform: capitalize;
+  transition: var(--transition);
+  font-weight: 400;
+  position: relative;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.0625rem;
+  background-color: var(--primary-color);
+  transform: scale(0);
+  transition: var(--transition);
+}
+
+.navbar-nav .nav-link.active,
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.navbar-nav .nav-link:hover::before,
+.nav-link.active::before,
+.nav-link:active::before {
+  transform: scale(1);
+}
+
+.navbar .navbar-toggler {
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0.875rem;
+  transition: var(--transition);
+}
+
+.navbar .navbar-toggler:hover {
+  background-color: #f7f7f7;
+}
+
+.navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-nav .dropdown-menu {
+  border: none;
+  background-color: var(--white-color);
+  border-radius: 0.3125rem;
+  padding: 0rem;
+}
+
+.navbar-nav .dropdown-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--p-color);
+  text-transform: capitalize;
+  font-weight: var(--font-weight-normal);
+  transition: var(--transition);
+  position: relative;
+  font-size: 1rem;
+}
+
+.navbar-nav .dropdown-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.0625rem;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+  transform: scale(0);
+}
+
+.navbar-nav .dropdown-item:hover::before {
+  transform: scale(1);
+}
+
+.navbar-nav .dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active,
+.dropdown-item.active {
+  background-color: transparent;
+  color: var(--primary-color) !important;
+}
+
+/* ---------------- Home ---------------- */
+.home {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url("../images/banner-img-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .content {
+  text-align: center;
+}
+
+.home .content h1 {
+  font-weight: var(--font-weight-bold);
+  text-transform: capitalize;
+}
+
+.home .content p {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.home .input-group {
+  padding: 0.3125rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.3125rem;
+}
+
+.home .input-group input {
+  border: none;
+  color: #fff;
+  background-color: transparent;
+}
+
+.home .input-group input::placeholder {
+  color: #fff;
+}
+
+.home .input-group a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.home .input-group .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 2.5rem;
+  color: var(--white-color);
+  padding-left: 0.625rem;
+  text-decoration: none;
+}
+
+.home .input-group input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+/* ---------------- About ---------------- */
+.about .content h3 {
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: var(--dark-color);
+}
+
+.about .content span {
+  text-transform: uppercase;
+  position: relative;
+  margin-left: 6.25rem;
+  color: var(--primary-color);
+}
+
+.about .content span::before {
+  content: "";
+  height: 0.125rem;
+  width: 5rem;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  right: 120%;
+  display: block;
+}
+
+.about .content p {
+  color: var(--p-color);
+  line-height: 1.8;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about .image > img {
+  text-align: center;
+  border-radius: 0.5rem !important;
+  padding: 0.125rem;
+}
+
+/* ---------------- Departments ---------------- */
+.departments .department-item a {
+  text-decoration: none;
+  text-align: center;
+  color: var(--dark-color);
+  display: block;
+  padding: 3.75rem 0rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.departments .department-item > h3 {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  text-transform: capitalize;
+  line-height: 1.7;
+}
+
+.departments .department-item a:hover {
+  box-shadow: 0rem 0.625rem 1.875rem rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------- Doctors ---------------- */
+.doctors .doctor-item {
+  border: 0.125rem solid var(--border-color);
+  padding: 2.5rem 2.5rem 1.875rem 2.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s linear;
+}
+
+.doctors .doctor-item .image img {
+  height: 9.375rem;
+  border: 0.125rem solid var(--border-color);
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s linear;
+}
+
+.doctors .content h5 {
+  color: var(--dark-color);
+  text-transform: capitalize;
+  font-size: 1.125rem;
+}
+
+.doctors .content span {
+  color: var(--primary-color);
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: var(--font-weight-light);
+}
+
+.doctors .doctor-item .content p {
+  color: var(--p-color);
+  line-height: 1.7;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.doctors .doctor-item:hover img,
+.doctors .doctor-item:hover {
+  border-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* ---------------- All Doctors ---------------- */
+.all-doctors .doctor-row {
+  box-shadow: var(--box-shadow);
+}
+
+.all-doctors .content {
+  color: var(--p-color);
+  line-height: 1.8;
+}
+
+.all-doctors .content h3 {
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+
+.all-doctors .content span {
+  text-transform: capitalize;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+.all-doctors .content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.all-doctors .buttons {
+  margin-top: 2.5rem;
+}
+
+.buttons .doctor-btn {
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 0.3125rem;
+  text-transform: capitalize;
+  border: 0.125rem solid var(--primary-color);
+  transition: var(--transition);
+}
+
+.buttons .btn-outline {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.buttons .btn-outline:hover {
+  background-color: #0b56c7;
+  color: var(--white-color);
+  border-color: #0b56c7;
+}
+
+.buttons .doctor-btn:hover {
+  background-color: #0b56c7;
+  border-color: #0b56c7;
+}
+
+.all-doctors .view-all {
+  border: 0.125rem solid var(--border-color);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.all-doctors .view-all .image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.all-doctors .view-all .content h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-transform: capitalize;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.all-doctors .view-all .content span {
+  margin-top: 0;
+  color: var(--title-color);
+}
+
+.all-doctors .view-all .content .about h6 {
+  color: var(--title-color);
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  text-transform: capitalize;
+}
+
+.all-doctors .view-all .content .about p {
+  color: var(--p-color);
+  line-height: 1.7;
+}
+
+.all-doctors .view-all .content .about p {
+  color: var(--p-color);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.all-doctors .view-all .content .profile {
+  text-transform: capitalize;
+}
+
+.all-doctors .view-all .content .education h6 {
+  color: var(--title-color);
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.all-doctors .view-all .content .item p {
+  color: var(--p-color);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.all-doctors .view-all .content .item p span {
+  color: var(--p-color);
+  line-height: 1.7;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.all-doctors .custom-btn {
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 0rem;
+  color: var(--primary-color);
+  border-radius: 0.3125rem;
+  text-transform: capitalize;
+  border: 0.0625rem solid var(--primary-color);
+  transition: var(--transition);
+}
+
+.all-doctors .custom-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+/* ---------------- Feedback ---------------- */
+/* 
+E
+M
+P
+T
+Y 
+*/
+
+/* ---------------- Apply Now ---------------- */
+
+/* 
+E
+M
+P
+T
+Y 
+*/
+
+/* ---------------- Log-In & Sign-Up & Admin ---------------- */
+
+/* 
+E
+M
+P
+T
+Y 
+*/
+
+/* ---------------- Book Appointment ---------------- */
+
+/* 
+E
+M
+P
+T
+Y 
+*/
+
+/* ---------------- Check Appointment ---------------- */
+.check-appointment .input-group {
+  padding: 0.5rem;
+  background-color: var(--white-color);
+  border-radius: 0.3125rem;
+  box-shadow: var(--box-shadow);
+  border: 0.0625rem solid var(--border-color);
+}
+
+.check-appointment .input-group input {
+  border: none;
+  background-color: transparent;
+  padding: 2rem;
+}
+
+.check-appointment .input-group a {
+  text-decoration: none;
+}
+
+.check-appointment .input-group .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 2.5rem;
+  color: var(--white-color);
+  padding-left: 0.625rem;
+  text-decoration: none;
+}
+
+.check-appointment .input-group .btn {
+  font-size: 1.125rem;
+  padding: 0rem 3rem;
+}
+
+/* ---------------- Reschedule Appointment ---------------- */
+
+/* 
+E
+M
+P
+T
+Y 
+*/
+
+/* ---------------- Contact ---------------- */
+.contact h3 {
+  font-size: 1.375rem;
+  color: var(--black-900);
+  font-weight: 500;
+  margin: 0 0 2.5rem;
+}
+
+.contact .contact-form {
+  padding: 1.25rem;
+  border-radius: 0.3125rem;
+  box-shadow: var(--box-shadow);
+}
+
+.contact .contact-item {
+  padding-left: 3.4375rem;
+  margin-bottom: 1.875rem;
+  position: relative;
+  display: block;
+  transition: all 0.6s linear;
+}
+
+.contact .contact-item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+  border: 0.0625rem solid var(--primary-color);
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.contact .contact-item h4 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.contact .contact-item a {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--p-color);
+  transition: all 0.3s linear;
+}
+
+.contact .contact-item:hover a,
+.contact .contact-item:hover h4 {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.contact .contact-item:hover .icon {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+  background-color: #f8f9fa;
+  padding: 3rem 3rem 0rem 3rem;
+}
+
+.footer-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer .footer-item h3 {
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+}
+
+.footer .copyright-text,
+.footer-item p,
+.footer-item ul a {
+  font-size: 1rem;
+  font-weight: var(--font-weight-light);
+  color: var(--p-color);
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.footer .footer-item ul li {
+  list-style-type: none;
+}
+
+.footer .footer-item ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-item ul li:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+.footer .footer-item ul li a {
+  display: block;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer .footer-item ul li a:hover {
+  transform: translateX(0.3125rem);
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.footer .copyright-text {
+  border-top: 0.0625rem solid #ddd;
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--title-color);
+}
